@@ -1,0 +1,14 @@
+**/.venv/
+**/uv.lock
+**/.env
+.env
+.venv/
+**/__pycache__
+**/instance/
+**/*.pyc
+**/htmlcov/
+**/dist
+**/build
+**/*.egg-info/
+**/.coverage
+**/.pytest_cache/
