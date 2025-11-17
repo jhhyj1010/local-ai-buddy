@@ -31,21 +31,34 @@
             font-size: 16px; /* Larger font size */
             line-height: 1.5; /* Spacing between lines */
         }
-    </style>
+        input[type="text"] {
+            width: 100%;
+            height: 300px;
+            text-align: left;
+            vertical-align: text-top;
+        }
+    </style>    
 </head>
 <body>
 
     <h1>Your AI Buddy</h1>
 
     <div class="form-group">
-        <label for="feedback1">Your Question:</label>
-        <textarea id="feedback1" name="feedback1" class="big-textarea" rows="8" cols="50" placeholder="Enter your question here..."></textarea>
+        <label for="question">Your Question:</label>
+        <form method="POST">
+        <textarea id="question" name="question" class="textarea" rows="8" cols="50" placeholder="Enter your question here..."></textarea>
+        <input type="submit" value="Submit">
+        </form>
     </div>
-
-    <div class="form-group">
-        <label for="feedback2">Answers:</label>
-        <textarea id="feedback2" name="feedback2" class="big-textarea" rows="8" cols="50"></textarea>
-    </div>
+    <br>
+    {% if question %}
+        <label for="question">Your Question:</label>
+        <pre style="white-space: pre-wrap; word-wrap: break-word;">{{ question }}</pre><br>
+        <label for="answer">Your answer:</label>
+        <body>
+            <pre style="white-space: pre-wrap; word-wrap: break-word;">{{ answer }}</pre>
+        </body>
+    {% endif %}
 
 </body>
 </html>
