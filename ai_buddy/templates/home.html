@@ -37,26 +37,31 @@
             text-align: left;
             vertical-align: text-top;
         }
+        .heading {
+            display: table;
+            margin: 0 auto;
+            padding: 5px;
+        }
     </style>    
 </head>
 <body>
 
-    <h1>Your AI Buddy</h1>
+    <h1 class="heading">Local AI Buddy</h1>
 
     <div class="form-group">
         <label for="question">Your Question:</label>
         <form method="POST">
         <textarea id="question" name="question" class="textarea" rows="8" cols="50" placeholder="Enter your question here..."></textarea>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" style="width: 120px; height: 40px; font-size: 20px;">
         </form>
     </div>
     <br>
     {% if question %}
         <label for="question">Your Question:</label>
-        <pre style="white-space: pre-wrap; word-wrap: break-word;">{{ question }}</pre><br>
+        <pre style="white-space: pre-wrap; word-wrap: break-word; color: crimson;">{{ question }}</pre><br>
         <label for="answer">Your answer:</label>
         <body>
-            <pre style="white-space: pre-wrap; word-wrap: break-word;">{{ answer }}</pre>
+            <pre style="white-space: pre-wrap; word-wrap: break-word; color: rgb(13, 7, 193);">{{ answer }}</pre>
         </body>
     {% endif %}
 
