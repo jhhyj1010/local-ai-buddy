@@ -1,0 +1,22 @@
+
+services:
+  web:
+    image: jhhyj1010/llama3-ai-buddy:2.0
+    ports:
+      - "5000:5000"
+    working_dir: /app
+    command: >
+      sh -c "pip3.12 install . && python3.12 main.py"
+    environment:
+      - LLAMA_URL="http://llama3:11434"
+    depends_on:
+      - llama3
+  llama3:
+    image: jhhyj1010/llama3-ai-buddy:latest
+    working_dir: /app
+    command: >
+      sh run_app.sh
+    expose:
+      - 11434
+    ports:
+      - "11434:11434"
