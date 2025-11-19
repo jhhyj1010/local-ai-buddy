@@ -31,7 +31,7 @@ jobs:
       uses: docker/metadata-action@v5
       with:
         images: |
-          ${{ secrets.DOCKERHUB_USERNAME }}/llama3-ai-buddy # Replace with your image name
+          jesson1018/llama3-ai-buddy # Replace with your image name
 
     - name: Build and push Docker image
       uses: docker/build-push-action@v6
