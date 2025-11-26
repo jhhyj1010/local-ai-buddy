@@ -7,8 +7,8 @@ pipeline {
             }
         }
         stage ('Build Docker Image') {
-            echo "building docker image..."
             steps {
+                echo "building docker image..."
                 script {
                     docker.build("local-ai-buddy:${env.BUILD_NUMBER}")
                 }
@@ -23,8 +23,8 @@ pipeline {
         //     }
         // }
         stage ('Push docker image') {
-            echo "pushing image to docker hub"
             steps {
+                echo "pushing image to docker hub"
                 script {
                     docker.withRegistry('https://index.docker.io/v1/', 'docker-hub-id') {
                         docker.image("local-ai-buddy:${env.BUILD_NUMBER}").push()
