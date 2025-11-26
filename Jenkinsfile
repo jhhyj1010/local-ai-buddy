@@ -23,7 +23,7 @@ pipeline {
         //     }
         // }
         stage ('Push docker image') {
-            echo "pushing image to docker hub"
+            echo "pushing image to docker hub..."
             steps {
                 script {
                     docker.withRegistry('https://index.docker.io/v1/', 'docker-hub-id') {
