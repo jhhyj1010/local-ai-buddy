@@ -24,7 +24,7 @@ pipeline {
         // }
         stage ('Push docker image') {
             steps {
-                echo "pushing image to docker hub"
+                echo "pushing image to docker hub..."
                 script {
                     docker.withRegistry('https://index.docker.io/v1/', 'docker-hub-id') {
                         docker.image("local-ai-buddy:${env.BUILD_NUMBER}").push()
