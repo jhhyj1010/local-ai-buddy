@@ -10,7 +10,7 @@ pipeline {
             steps {
                 echo "building docker image..."
                 script {
-                    docker.build("local-ai-buddy:${env.BUILD_NUMBER}")
+                    docker.build("jesson1018/local-ai-buddy:${env.BUILD_NUMBER}")
                 }
             }
         }
@@ -26,8 +26,8 @@ pipeline {
             steps {
                 echo "pushing image to docker hub..."
                 script {
-                    docker.withRegistry('https://index.docker.io/v1/', 'DOCKER_HUB_CREDENTIALS') {
-                        docker.image("local-ai-buddy:${env.BUILD_NUMBER}").push()
+                    docker.withRegistry('https://registry.hub.docker.com', 'DOCKER_HUB_CREDENTIALS') {
+                        docker.image("jesson1018/local-ai-buddy:${env.BUILD_NUMBER}").push()
                     }
                 }
         }
