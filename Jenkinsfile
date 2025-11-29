@@ -14,14 +14,6 @@ pipeline {
                 }
             }
         }
-        // stage ('Login docker hub') {
-        //     echo "logging in docker hub..."
-        //     steps {
-        //         script {
-        //             docker.withRegistry('https://index.docker.io/v1/', 'docker-hub-id')
-        //         }
-        //     }
-        // }
         stage ('Push docker image') {
             steps {
                 echo "pushing image to docker hub..."
